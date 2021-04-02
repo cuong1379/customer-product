@@ -691,6 +691,45 @@ const LandingPage = () => {
       title: "Title 6",
     },
   ];
+
+  const items3 = [
+    <img
+      style={{ width: "250px", height: "300px" }}
+      src={process.env.PUBLIC_URL + "/anh1.jpg"}
+      alt="has1"
+      onDragStart={handleDragStart}
+    />,
+    <img
+      style={{ width: "250px", height: "300px" }}
+      src={process.env.PUBLIC_URL + "/anh1.jpg"}
+      alt="has2"
+      onDragStart={handleDragStart}
+    />,
+    <img
+      style={{ width: "250px", height: "300px" }}
+      src={process.env.PUBLIC_URL + "/anh1.jpg"}
+      alt="has3"
+      onDragStart={handleDragStart}
+    />,
+    <img
+      style={{ width: "250px", height: "300px" }}
+      src={process.env.PUBLIC_URL + "/anh1.jpg"}
+      alt="has1"
+      onDragStart={handleDragStart}
+    />,
+    <img
+      style={{ width: "250px", height: "300px" }}
+      src={process.env.PUBLIC_URL + "/anh1.jpg"}
+      alt="has2"
+      onDragStart={handleDragStart}
+    />,
+    <img
+      style={{ width: "250px", height: "300px" }}
+      src={process.env.PUBLIC_URL + "/anh1.jpg"}
+      alt="has3"
+      onDragStart={handleDragStart}
+    />,
+  ];
   return (
     <Fragment>
       <div
@@ -1024,6 +1063,43 @@ const LandingPage = () => {
             disableDotsControls={true}
           />
         </div>
+      </div>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <div
+          style={{
+            fontFamily: "Satisfy",
+            color: "#990000",
+            fontSize: "30px",
+            fontWeight: "600",
+            marginTop: "50px",
+            marginLeft: "30px",
+          }}
+        >
+          Thư viện ảnh
+        </div>
+      </div>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <div style={{ maxWidth: "1200px", width: "100%", marginTop: "50px" }}>
+          <AliceCarousel
+            mouseTracking
+            items={items3}
+            autoPlay={true}
+            autoPlayInterval={2000}
+            infinite={true}
+            responsive={responsive}
+            disableButtonsControls={true}
+            disableDotsControls={true}
+          />
+        </div>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          background: "#990000",
+        }}
+      >
+        <div>KHÁCH HÀNG NÓI GÌ VỀ NHÀ HÀNG NÓN LÁ</div>
       </div>
     </Fragment>
   );
