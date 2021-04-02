@@ -340,93 +340,6 @@ const LandingPage = () => {
     <div>
       <img
         style={{ width: "350px", height: "225px" }}
-        src={process.env.PUBLIC_URL + "/tiec1.jpg"}
-        alt="has1"
-        onDragStart={handleDragStart}
-      />
-      <div
-        style={{
-          color: "#990000",
-          fontSize: "15px",
-
-          marginTop: "10px",
-        }}
-      >
-        Tặng ngay món quà yêu thương cho thưc khách khi đến dùng bữa tại nhà
-        hàng
-      </div>
-      <div
-        style={{
-          color: "red",
-          fontSize: "15px",
-          textAlign: "center",
-          fontWeight: "600",
-        }}
-      >
-        299,000đ
-      </div>
-    </div>,
-    <div>
-      <img
-        style={{ width: "350px", height: "225px" }}
-        src={process.env.PUBLIC_URL + "/tiec2.jpg"}
-        alt="has1"
-        onDragStart={handleDragStart}
-      />
-      <div
-        style={{
-          color: "#990000",
-          fontSize: "15px",
-
-          marginTop: "10px",
-        }}
-      >
-        Tặng ngay món quà yêu thương cho thưc khách khi đến dùng bữa tại nhà
-        hàng
-      </div>
-      <div
-        style={{
-          color: "red",
-          fontSize: "15px",
-          textAlign: "center",
-          fontWeight: "600",
-        }}
-      >
-        299,000đ
-      </div>
-    </div>,
-    <div>
-      <img
-        style={{ width: "350px", height: "225px" }}
-        src={process.env.PUBLIC_URL + "/tiec3.jpg"}
-        alt="has1"
-        onDragStart={handleDragStart}
-      />
-      <div
-        style={{
-          color: "#990000",
-          fontSize: "15px",
-
-          marginTop: "10px",
-        }}
-      >
-        Tặng ngay món quà yêu thương cho thưc khách khi đến dùng bữa tại nhà
-        hàng
-      </div>
-      <div
-        style={{
-          color: "red",
-          fontSize: "15px",
-          textAlign: "center",
-          fontWeight: "600",
-        }}
-      >
-        299,000đ
-      </div>
-    </div>,
-    <div>
-      <img
-        style={{ width: "350px", height: "225px" }}
         src={process.env.PUBLIC_URL + "/tiec4.jpg"}
         alt="has1"
         onDragStart={handleDragStart}
@@ -435,22 +348,36 @@ const LandingPage = () => {
         style={{
           color: "#990000",
           fontSize: "15px",
-
+          fontWeight: "600",
           marginTop: "10px",
+          marginRight: "20px",
         }}
       >
-        Tặng ngay món quà yêu thương cho thưc khách khi đến dùng bữa tại nhà
-        hàng
+        TẶNG NGAY MÓN QUÀ YÊU THƯƠNG CHO THƯC KHÁCH KHI ĐẾN DÙNG BỮA TẠI NHÀ
+        HÀNG
       </div>
       <div
         style={{
-          color: "red",
+          color: "#990000",
           fontSize: "15px",
-          textAlign: "center",
-          fontWeight: "600",
+          marginTop: "10px",
+          marginRight: "20px",
+          fontWeight: "300",
         }}
       >
-        299,000đ
+        07/04/2020
+      </div>
+      <div
+        style={{
+          color: "#000",
+          fontSize: "14px",
+          marginTop: "10px",
+          marginRight: "20px",
+          fontWeight: "300",
+        }}
+      >
+        Noel năm 2019 khách đến đông đúc và nhận được quà từ ông già Noel đây -
+        Haihoangbinhtan.com
       </div>
     </div>,
     <div>
@@ -464,22 +391,36 @@ const LandingPage = () => {
         style={{
           color: "#990000",
           fontSize: "15px",
-
+          fontWeight: "600",
           marginTop: "10px",
+          marginRight: "20px",
         }}
       >
-        Tặng ngay món quà yêu thương cho thưc khách khi đến dùng bữa tại nhà
-        hàng
+        TẶNG NGAY MÓN QUÀ YÊU THƯƠNG CHO THƯC KHÁCH KHI ĐẾN DÙNG BỮA TẠI NHÀ
+        HÀNG
       </div>
       <div
         style={{
-          color: "red",
+          color: "#990000",
           fontSize: "15px",
-          textAlign: "center",
-          fontWeight: "600",
+          marginTop: "10px",
+          marginRight: "20px",
+          fontWeight: "300",
         }}
       >
-        299,000đ
+        07/04/2020
+      </div>
+      <div
+        style={{
+          color: "#000",
+          fontSize: "14px",
+          marginTop: "10px",
+          marginRight: "20px",
+          fontWeight: "300",
+        }}
+      >
+        Noel năm 2019 khách đến đông đúc và nhận được quà từ ông già Noel đây -
+        Haihoangbinhtan.com
       </div>
     </div>,
     <div>
@@ -493,22 +434,36 @@ const LandingPage = () => {
         style={{
           color: "#990000",
           fontSize: "15px",
-
+          fontWeight: "600",
           marginTop: "10px",
+          marginRight: "20px",
         }}
       >
-        Tặng ngay món quà yêu thương cho thưc khách khi đến dùng bữa tại nhà
-        hàng
+        TẶNG NGAY MÓN QUÀ YÊU THƯƠNG CHO THƯC KHÁCH KHI ĐẾN DÙNG BỮA TẠI NHÀ
+        HÀNG
       </div>
       <div
         style={{
-          color: "red",
+          color: "#990000",
           fontSize: "15px",
-          textAlign: "center",
-          fontWeight: "600",
+          marginTop: "10px",
+          marginRight: "20px",
+          fontWeight: "300",
         }}
       >
-        299,000đ
+        07/04/2020
+      </div>
+      <div
+        style={{
+          color: "#000",
+          fontSize: "14px",
+          marginTop: "10px",
+          marginRight: "20px",
+          fontWeight: "300",
+        }}
+      >
+        Noel năm 2019 khách đến đông đúc và nhận được quà từ ông già Noel đây -
+        Haihoangbinhtan.com
       </div>
     </div>,
     <div>
@@ -522,22 +477,36 @@ const LandingPage = () => {
         style={{
           color: "#990000",
           fontSize: "15px",
-
+          fontWeight: "600",
           marginTop: "10px",
+          marginRight: "20px",
         }}
       >
-        Tặng ngay món quà yêu thương cho thưc khách khi đến dùng bữa tại nhà
-        hàng
+        TẶNG NGAY MÓN QUÀ YÊU THƯƠNG CHO THƯC KHÁCH KHI ĐẾN DÙNG BỮA TẠI NHÀ
+        HÀNG
       </div>
       <div
         style={{
-          color: "red",
+          color: "#990000",
           fontSize: "15px",
-          textAlign: "center",
-          fontWeight: "600",
+          marginTop: "10px",
+          marginRight: "20px",
+          fontWeight: "300",
         }}
       >
-        299,000đ
+        07/04/2020
+      </div>
+      <div
+        style={{
+          color: "#000",
+          fontSize: "14px",
+          marginTop: "10px",
+          marginRight: "20px",
+          fontWeight: "300",
+        }}
+      >
+        Noel năm 2019 khách đến đông đúc và nhận được quà từ ông già Noel đây -
+        Haihoangbinhtan.com
       </div>
     </div>,
     <div>
@@ -551,22 +520,153 @@ const LandingPage = () => {
         style={{
           color: "#990000",
           fontSize: "15px",
-
+          fontWeight: "600",
           marginTop: "10px",
         }}
       >
-        Tặng ngay món quà yêu thương cho thưc khách khi đến dùng bữa tại nhà
-        hàng
+        TẶNG NGAY MÓN QUÀ YÊU THƯƠNG CHO THƯC KHÁCH KHI ĐẾN DÙNG BỮA TẠI NHÀ
+        HÀNG
       </div>
       <div
         style={{
-          color: "red",
+          color: "#990000",
           fontSize: "15px",
-          textAlign: "center",
-          fontWeight: "600",
+          marginTop: "10px",
+          fontWeight: "300",
         }}
       >
-        299,000đ
+        07/04/2020
+      </div>
+      <div
+        style={{
+          color: "#000",
+          fontSize: "14px",
+          marginTop: "10px",
+          fontWeight: "300",
+        }}
+      >
+        Noel năm 2019 khách đến đông đúc và nhận được quà từ ông già Noel đây -
+        Haihoangbinhtan.com
+      </div>
+    </div>,
+    <div>
+      <img
+        style={{ width: "350px", height: "225px" }}
+        src={process.env.PUBLIC_URL + "/tiec1.jpg"}
+        alt="has1"
+        onDragStart={handleDragStart}
+      />
+      <div
+        style={{
+          color: "#990000",
+          fontSize: "15px",
+          fontWeight: "600",
+          marginTop: "10px",
+        }}
+      >
+        TẶNG NGAY MÓN QUÀ YÊU THƯƠNG CHO THƯC KHÁCH KHI ĐẾN DÙNG BỮA TẠI NHÀ
+        HÀNG
+      </div>
+      <div
+        style={{
+          color: "#990000",
+          fontSize: "15px",
+          marginTop: "10px",
+          fontWeight: "300",
+        }}
+      >
+        07/04/2020
+      </div>
+      <div
+        style={{
+          color: "#000",
+          fontSize: "14px",
+          marginTop: "10px",
+          fontWeight: "300",
+        }}
+      >
+        Noel năm 2019 khách đến đông đúc và nhận được quà từ ông già Noel đây -
+        Haihoangbinhtan.com
+      </div>
+    </div>,
+    <div>
+      <img
+        style={{ width: "350px", height: "225px" }}
+        src={process.env.PUBLIC_URL + "/tiec2.jpg"}
+        alt="has1"
+        onDragStart={handleDragStart}
+      />
+      <div
+        style={{
+          color: "#990000",
+          fontSize: "15px",
+          fontWeight: "600",
+          marginTop: "10px",
+        }}
+      >
+        TẶNG NGAY MÓN QUÀ YÊU THƯƠNG CHO THƯC KHÁCH KHI ĐẾN DÙNG BỮA TẠI NHÀ
+        HÀNG
+      </div>
+      <div
+        style={{
+          color: "#990000",
+          fontSize: "15px",
+          marginTop: "10px",
+          fontWeight: "300",
+        }}
+      >
+        07/04/2020
+      </div>
+      <div
+        style={{
+          color: "#000",
+          fontSize: "14px",
+          marginTop: "10px",
+          fontWeight: "300",
+        }}
+      >
+        Noel năm 2019 khách đến đông đúc và nhận được quà từ ông già Noel đây -
+        Haihoangbinhtan.com
+      </div>
+    </div>,
+    <div>
+      <img
+        style={{ width: "350px", height: "225px" }}
+        src={process.env.PUBLIC_URL + "/tiec3.jpg"}
+        alt="has1"
+        onDragStart={handleDragStart}
+      />
+      <div
+        style={{
+          color: "#990000",
+          fontSize: "15px",
+          fontWeight: "600",
+          marginTop: "10px",
+        }}
+      >
+        TẶNG NGAY MÓN QUÀ YÊU THƯƠNG CHO THƯC KHÁCH KHI ĐẾN DÙNG BỮA TẠI NHÀ
+        HÀNG
+      </div>
+      <div
+        style={{
+          color: "#990000",
+          fontSize: "15px",
+          marginTop: "10px",
+          fontWeight: "300",
+        }}
+      >
+        07/04/2020
+      </div>
+      <div
+        style={{
+          color: "#000",
+          fontSize: "14px",
+          marginTop: "10px",
+          fontWeight: "300",
+        }}
+      >
+        Noel năm 2019 khách đến đông đúc và nhận được quà từ ông già Noel đây -
+        Haihoangbinhtan.com
       </div>
     </div>,
   ];
@@ -898,8 +998,21 @@ const LandingPage = () => {
           Sự Kiện - Góc Ẩm Thực
         </div>
       </div>
-      <div style={{ display: "flex", justifyContent: "center" }}>
-        <div style={{ maxWidth: "1200px", width: "100%", marginTop: "50px" }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          background: "#fff5e0",
+        }}
+      >
+        <div
+          style={{
+            maxWidth: "1200px",
+            width: "100%",
+            marginTop: "50px",
+            marginBottom: "30px",
+          }}
+        >
           <AliceCarousel
             mouseTracking
             items={items2}
