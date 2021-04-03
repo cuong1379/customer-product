@@ -1,4 +1,5 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState, useEffect } from "react";
+import axios from "axios";
 import {
   Carousel,
   List,
@@ -33,8 +34,26 @@ const contentStyle4 = {
   backgroundImage: `url("https://haihoangbinhtan.com/uploads/source/slider/nhahanghaihoang.jpg")`,
 };
 const { RangePicker } = DatePicker;
+const { Meta } = Card;
 
 const LandingPage = () => {
+  const [productList, setProductList] = useState([]);
+  const getProduct = async () => {
+    try {
+      const res = await axios.get(
+        "https://product-production-123.herokuapp.com/productions"
+      );
+      console.log(res.data.production);
+      setProductList(res.data.production);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getProduct();
+  }, []);
+
   const handleDragStart = (e) => e.preventDefault();
   const responsive = {
     0: { items: 1 },
@@ -687,27 +706,6 @@ const LandingPage = () => {
     </div>,
   ];
 
-  const data = [
-    {
-      title: "Title 1",
-    },
-    {
-      title: "Title 2",
-    },
-    {
-      title: "Title 3",
-    },
-    {
-      title: "Title 4",
-    },
-    {
-      title: "Title 5",
-    },
-    {
-      title: "Title 6",
-    },
-  ];
-
   const items3 = [
     <img
       style={{ width: "250px", height: "300px" }}
@@ -1064,7 +1062,13 @@ const LandingPage = () => {
           />
         </div>
       </div>
-      <div style={{ display: "flex", justifyContent: "center" }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          marginBottom: "30px",
+        }}
+      >
         <div
           style={{
             color: "#000",
@@ -1100,10 +1104,21 @@ const LandingPage = () => {
               xl: 4,
               xxl: 4,
             }}
-            dataSource={data}
+            dataSource={productList}
             renderItem={(item) => (
               <List.Item>
-                <Card title={item.title}>Card content</Card>
+                <Card
+                  hoverable
+                  style={{ width: 240 }}
+                  cover={<img alt="example" src={item.thumbnail} />}
+                >
+                  <Meta title={item.name} description={item.description} />
+                  <div style={{ marginTop: "15px", color: "red" }}>
+                    {" "}
+                    {item.price}
+                  </div>
+                </Card>
+                ,
               </List.Item>
             )}
           />
