@@ -1,5 +1,14 @@
 import React, { Fragment } from "react";
-import { Carousel, List, Card } from "antd";
+import {
+  Carousel,
+  List,
+  Card,
+  Form,
+  Input,
+  InputNumber,
+  Button,
+  DatePicker,
+} from "antd";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 
@@ -23,6 +32,7 @@ const contentStyle4 = {
   height: "500px",
   backgroundImage: `url("https://haihoangbinhtan.com/uploads/source/slider/nhahanghaihoang.jpg")`,
 };
+const { RangePicker } = DatePicker;
 
 const LandingPage = () => {
   const handleDragStart = (e) => e.preventDefault();
@@ -37,6 +47,12 @@ const LandingPage = () => {
     1024: { items: 6 },
   };
   const responsive2 = {
+    0: { items: 1 },
+    568: { items: 2 },
+    1024: { items: 3 },
+  };
+
+  const responsive4 = {
     0: { items: 1 },
     568: { items: 2 },
     1024: { items: 3 },
@@ -730,6 +746,121 @@ const LandingPage = () => {
       onDragStart={handleDragStart}
     />,
   ];
+
+  const items4 = [
+    <div style={{ display: "flex" }}>
+      <img
+        style={{ width: "100px", height: "100px", borderRadius: "100%" }}
+        src={process.env.PUBLIC_URL + "/avt1.jpg"}
+        alt="has1"
+        onDragStart={handleDragStart}
+      />
+      <div>
+        <div
+          style={{
+            fontSize: "15px",
+            fontWeight: "600",
+            marginTop: "10px",
+            marginRight: "20px",
+          }}
+        >
+          Chỉ có thể nói 1 câu ngắn gọn về mọi thứ từ món ăn đến phong cách phục
+          vụ ở nhà hàng Hải Hoàng là " Tuyệt Vời"&nbsp;
+        </div>
+        <div
+          style={{
+            color: "#990000",
+            fontSize: "15px",
+            marginTop: "10px",
+            marginRight: "20px",
+            fontWeight: "300",
+          }}
+        >
+          Mrs.Thủy
+        </div>
+      </div>
+    </div>,
+    <div style={{ display: "flex" }}>
+      <img
+        style={{ width: "100px", height: "100px", borderRadius: "100%" }}
+        src={process.env.PUBLIC_URL + "/avt2.jpg"}
+        alt="has1"
+        onDragStart={handleDragStart}
+      />
+      <div>
+        <div
+          style={{
+            fontSize: "15px",
+            fontWeight: "600",
+            marginTop: "10px",
+            marginRight: "20px",
+          }}
+        >
+          Chỉ có thể nói 1 câu ngắn gọn về mọi thứ từ món ăn đến phong cách phục
+          vụ ở nhà hàng Hải Hoàng là " Tuyệt Vời"&nbsp;
+        </div>
+        <div
+          style={{
+            color: "#990000",
+            fontSize: "15px",
+            marginTop: "10px",
+            marginRight: "20px",
+            fontWeight: "300",
+          }}
+        >
+          Mrs.Thủy
+        </div>
+      </div>
+    </div>,
+    <div style={{ display: "flex" }}>
+      <img
+        style={{ width: "100px", height: "100px", borderRadius: "100%" }}
+        src={process.env.PUBLIC_URL + "/avt3.jpg"}
+        alt="has1"
+        onDragStart={handleDragStart}
+      />
+      <div>
+        <div
+          style={{
+            fontSize: "15px",
+            fontWeight: "600",
+            marginTop: "10px",
+            marginRight: "20px",
+          }}
+        >
+          Chỉ có thể nói 1 câu ngắn gọn về mọi thứ từ món ăn đến phong cách phục
+          vụ ở nhà hàng Hải Hoàng là " Tuyệt Vời"&nbsp;
+        </div>
+        <div
+          style={{
+            color: "#990000",
+            fontSize: "15px",
+            marginTop: "10px",
+            marginRight: "20px",
+            fontWeight: "300",
+          }}
+        >
+          Mrs.Thủy
+        </div>
+      </div>
+    </div>,
+  ];
+
+  const onFinish = (values) => {
+    console.log(values);
+  };
+
+  const validateMessages = {
+    required: "${label} is required!",
+    types: {
+      email: "${label} is not a valid email!",
+      number: "${label} is not a valid number!",
+    },
+    number: {
+      range: "${label} must be between ${min} and ${max}",
+    },
+  };
+
   return (
     <Fragment>
       <div
@@ -1096,10 +1227,190 @@ const LandingPage = () => {
         style={{
           display: "flex",
           justifyContent: "center",
-          background: "#990000",
+          background: " #ffcc80",
+          color: "#990000",
+          fontWeight: "400",
+          paddingTop: "15px",
+          paddingBottom: "15px",
+          marginTop: "30px",
+          marginBottom: "30px",
+          fontSize: "25px",
         }}
       >
         <div>KHÁCH HÀNG NÓI GÌ VỀ NHÀ HÀNG NÓN LÁ</div>
+      </div>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <div style={{ maxWidth: "1200px", width: "100%", marginTop: "50px" }}>
+          <AliceCarousel
+            mouseTracking
+            items={items4}
+            autoPlay={true}
+            autoPlayInterval={2000}
+            infinite={true}
+            responsive={responsive4}
+            disableDotsControls={true}
+          />
+        </div>
+      </div>
+      <div
+        style={{
+          backgroundImage: `url("https://haihoangbinhtan.com/uploads/source/slider/nhahanghaihoangbinhtan.jpg")`,
+          backgroundAttachment: "fixed",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <div
+          style={{
+            backgroundColor: "#000",
+            padding: "30px",
+            margin: "30px",
+            maxWidth: "500px",
+            width: "100%",
+          }}
+        >
+          <p
+            style={{
+              textAlign: "center",
+              color: "#ffcc33",
+              fontWeight: "400",
+              fontSize: "25px",
+            }}
+          >
+            YÊU CẦU ĐẶT BÀN
+          </p>
+          <Form
+            name="nest-messages"
+            onFinish={onFinish}
+            validateMessages={validateMessages}
+          >
+            <Form.Item
+              name="name"
+              rules={[
+                {
+                  required: true,
+                },
+              ]}
+            >
+              <Input placeholder="Tên khách hàng" />
+            </Form.Item>
+
+            <Form.Item
+              name="phone"
+              rules={[
+                {
+                  required: true,
+                },
+              ]}
+            >
+              <Input placeholder="Số điện thoại" />
+            </Form.Item>
+
+            <div style={{ display: "flex", justifyContent: "space-between" }}>
+              <Form.Item name="date" label="">
+                <DatePicker placeholder="mm/dd/yy" />
+              </Form.Item>
+
+              <Form.Item
+                style={{ width: "50%" }}
+                name="count"
+                rules={[
+                  {
+                    type: "number",
+                    min: 0,
+                    max: 99,
+                  },
+                ]}
+              >
+                <InputNumber
+                  style={{ width: "100%" }}
+                  placeholder="Số chỗ ngồi"
+                />
+              </Form.Item>
+            </div>
+
+            <Form.Item name="content">
+              <Input.TextArea placeholder="Nội dung" />
+            </Form.Item>
+            <Form.Item>
+              <Button
+                htmlType="submit"
+                style={{
+                  width: "100%",
+                  borderRadius: "20px",
+                  backgroundColor: "#cc0000",
+                  color: "white",
+                  border: "none",
+                }}
+              >
+                Gửi Yêu Cầu Đặt Hẹn
+              </Button>
+            </Form.Item>
+          </Form>
+        </div>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          backgroundColor: "black",
+          color: "white",
+          paddingTop: "30px",
+        }}
+      >
+        <div style={{ marginRight: "30px" }}>
+          <div
+            style={{
+              fontWeight: "500",
+              fontSize: "25px",
+              marginBottom: "15px",
+            }}
+          >
+            NHÀ HÀNG HẢI HOÀNG BÌNH TÂN
+          </div>
+          <div>
+            <img
+              src={process.env.PUBLIC_URL + "/anhfooter.jpg"}
+              alt="heafne"
+              style={{ width: "150px", marginBottom: "15px" }}
+            />
+          </div>
+          <div>
+            Đến với nhà hàng để được phục vụ tốt nhất và trãi nghiệm nhé!
+          </div>
+          <div>
+            239-241 Vành Đai Trong, Phường Bình Trị Đông B, Bình Tân, Hồ Chí
+            Minh
+            <br></br>
+            Hotline: 0938 624 368
+            <br></br>
+            Mail: quananhaihoang@gmail.com
+            <br></br>
+            Website: haihoangbinhtan.com
+          </div>
+        </div>
+
+        <div style={{ marginLeft: "30px" }}>
+          <iframe
+            style={{ width: "550px", height: "350px" }}
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.807510014489!2d106.61270031472169!3d10.749313662633048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752dcd24fec181%3A0x9305d628f31e46c8!2zMjM5IFbDoG5oIMSQYWkgVHJvbmcsIELDrG5oIFRy4buLIMSQw7RuZyBCLCBCw6xuaCBUw6JuLCBUaMOgbmggcGjhu5EgSOG7kyBDaMOtIE1pbmgsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1617431019274!5m2!1svi!2s"
+          ></iframe>
+        </div>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          backgroundColor: "#282828",
+          color: "white",
+          paddingTop: "15px",
+          paddingBottom: "15px",
+        }}
+      >
+        © 2021 Nhà Hàng Hải Hoàng Bình Tân - Thiết kế bởi finx.vn
       </div>
     </Fragment>
   );
