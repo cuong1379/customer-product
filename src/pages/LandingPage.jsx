@@ -33,7 +33,7 @@ const contentStyle4 = {
   height: "500px",
   backgroundImage: `url("https://haihoangbinhtan.com/uploads/source/slider/nhahanghaihoang.jpg")`,
 };
-const { RangePicker } = DatePicker;
+
 const { Meta } = Card;
 
 const LandingPage = () => {
@@ -844,19 +844,16 @@ const LandingPage = () => {
     </div>,
   ];
 
-  const onFinish = (values) => {
+  const onFinish = async (values) => {
     console.log(values);
-  };
 
-  const validateMessages = {
-    required: "${label} is required!",
-    types: {
-      email: "${label} is not a valid email!",
-      number: "${label} is not a valid number!",
-    },
-    number: {
-      range: "${label} must be between ${min} and ${max}",
-    },
+    try {
+      const res = await axios.post("http://localhost:5555/customers", values);
+
+      console.log(res.data.customer);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -1300,7 +1297,7 @@ const LandingPage = () => {
           <Form
             name="nest-messages"
             onFinish={onFinish}
-            validateMessages={validateMessages}
+            validateMessages="Vui long nhap thong tin"
           >
             <Form.Item
               name="name"
@@ -1410,6 +1407,7 @@ const LandingPage = () => {
 
         <div style={{ marginLeft: "30px" }}>
           <iframe
+            title="Google Map"
             style={{ width: "550px", height: "350px" }}
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.807510014489!2d106.61270031472169!3d10.749313662633048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752dcd24fec181%3A0x9305d628f31e46c8!2zMjM5IFbDoG5oIMSQYWkgVHJvbmcsIELDrG5oIFRy4buLIMSQw7RuZyBCLCBCw6xuaCBUw6JuLCBUaMOgbmggcGjhu5EgSOG7kyBDaMOtIE1pbmgsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1617431019274!5m2!1svi!2s"
           ></iframe>
