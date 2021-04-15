@@ -9,6 +9,8 @@ import {
   InputNumber,
   Button,
   DatePicker,
+  Dropdown,
+  Menu,
 } from "antd";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
@@ -40,9 +42,7 @@ const LandingPage = () => {
   const [productList, setProductList] = useState([]);
   const getProduct = async () => {
     try {
-      const res = await axios.get(
-        "https://product-production-123.herokuapp.com/productions"
-      );
+      const res = await axios.get("http://localhost:5555/productions");
       console.log(res.data.production);
       setProductList(res.data.production);
     } catch (error) {
@@ -856,6 +856,20 @@ const LandingPage = () => {
     }
   };
 
+  const menu = (
+    <Menu style={{ backgroundColor: "#2a2b2e" }}>
+      <Menu.Item style={{ color: "#eb7c7c" }}>
+        <p style={{ paddingLeft: "20px", paddingRight: "20px" }}>Ăn sáng</p>
+      </Menu.Item>
+      <Menu.Item style={{ color: "#eb7c7c" }}>
+        <p style={{ paddingLeft: "20px", paddingRight: "20px" }}>Dimsum</p>
+      </Menu.Item>
+      <Menu.Item style={{ color: "#eb7c7c" }}>
+        <p style={{ paddingLeft: "20px", paddingRight: "20px" }}>Lẩu</p>
+      </Menu.Item>
+    </Menu>
+  );
+
   return (
     <Fragment>
       <div
@@ -924,16 +938,23 @@ const LandingPage = () => {
       >
         <ul style={{ listStyle: "none", display: "flex" }}>
           <li style={{ padding: "10px 15px", fontWeight: "100px" }}>
-            TRANG CHỦ
+            <span style={{ padding: "5px", cursor: "pointer" }}>TRANG CHỦ</span>
           </li>
           <li style={{ padding: "10px 15px", fontWeight: "100px" }}>
-            GIỚI THIỆU
+            <span style={{ padding: "5px", cursor: "pointer" }}>
+              GIỚI THIỆU
+            </span>
           </li>
           <li style={{ padding: "10px 15px", fontWeight: "100px" }}>
-            THỰC ĐƠN
+            {/* <span style={{ padding: "5px", cursor: "pointer" }}>THỰC ĐƠN</span> */}
+            <Dropdown overlay={menu} placement="bottomCenter" arrow>
+              <span style={{ padding: "5px", cursor: "pointer" }}>
+                THỰC ĐƠN
+              </span>
+            </Dropdown>
           </li>
           <li style={{ padding: "10px 15px", fontWeight: "100px" }}>
-            HÌNH ẢNH
+            <span style={{ padding: "5px", cursor: "pointer" }}>HÌNH ẢNH</span>
           </li>
         </ul>
         <div>
@@ -946,24 +967,36 @@ const LandingPage = () => {
         <div>
           <ul style={{ listStyle: "none", display: "flex" }}>
             <li style={{ padding: "10px 15px", fontWeight: "100px" }}>
-              TRANG CHỦ
+              <span style={{ padding: "5px", cursor: "pointer" }}>
+                TRANG CHỦ
+              </span>
             </li>
             <li style={{ padding: "10px 15px", fontWeight: "100px" }}>
-              GIỚI THIỆU
+              <span style={{ padding: "5px", cursor: "pointer" }}>
+                TRANG CHỦ
+              </span>
             </li>
             <li style={{ padding: "10px 15px", fontWeight: "100px" }}>
-              THỰC ĐƠN
+              <span style={{ padding: "5px", cursor: "pointer" }}>
+                TRANG CHỦ
+              </span>
             </li>
             <li style={{ padding: "10px 15px", fontWeight: "100px" }}>
-              HÌNH ẢNH
+              <span style={{ padding: "5px", cursor: "pointer" }}>
+                TRANG CHỦ
+              </span>
             </li>
           </ul>
           <ul style={{ listStyle: "none", display: "flex" }}>
             <li style={{ padding: "10px 15px", fontWeight: "100px" }}>
-              TRANG CHỦ
+              <span style={{ padding: "5px", cursor: "pointer" }}>
+                TRANG CHỦ
+              </span>
             </li>
             <li style={{ padding: "10px 15px", fontWeight: "100px" }}>
-              GIỚI THIỆU
+              <span style={{ padding: "5px", cursor: "pointer" }}>
+                TRANG CHỦ
+              </span>
             </li>
             <div>
               <img
