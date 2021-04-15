@@ -976,35 +976,27 @@ const LandingPage = () => {
           <ul style={{ listStyle: "none", display: "flex" }}>
             <li style={{ padding: "10px 15px", fontWeight: "100px" }}>
               <span style={{ padding: "5px", cursor: "pointer" }}>
-                TRANG CHỦ
+                KHUYẾN MÃI
               </span>
             </li>
             <li style={{ padding: "10px 15px", fontWeight: "100px" }}>
-              <span style={{ padding: "5px", cursor: "pointer" }}>
-                TRANG CHỦ
-              </span>
+              <span style={{ padding: "5px", cursor: "pointer" }}>TIN TỨC</span>
             </li>
             <li style={{ padding: "10px 15px", fontWeight: "100px" }}>
-              <span style={{ padding: "5px", cursor: "pointer" }}>
-                TRANG CHỦ
-              </span>
+              <span style={{ padding: "5px", cursor: "pointer" }}>ƯU ĐÃI</span>
             </li>
             <li style={{ padding: "10px 15px", fontWeight: "100px" }}>
-              <span style={{ padding: "5px", cursor: "pointer" }}>
-                TRANG CHỦ
-              </span>
+              <span style={{ padding: "5px", cursor: "pointer" }}>ĐẶT BÀN</span>
             </li>
           </ul>
           <ul style={{ listStyle: "none", display: "flex" }}>
             <li style={{ padding: "10px 15px", fontWeight: "100px" }}>
               <span style={{ padding: "5px", cursor: "pointer" }}>
-                TRANG CHỦ
+                GÓC ẨM THỰC
               </span>
             </li>
             <li style={{ padding: "10px 15px", fontWeight: "100px" }}>
-              <span style={{ padding: "5px", cursor: "pointer" }}>
-                TRANG CHỦ
-              </span>
+              <span style={{ padding: "5px", cursor: "pointer" }}>LIÊN HỆ</span>
             </li>
             <div>
               <img
