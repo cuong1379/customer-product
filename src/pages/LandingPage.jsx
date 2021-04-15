@@ -1,5 +1,6 @@
 import React, { Fragment, useState, useEffect } from "react";
 import axios from "axios";
+import moment from "moment";
 import {
   Carousel,
   List,
@@ -11,6 +12,8 @@ import {
   DatePicker,
   Dropdown,
   Menu,
+  TimePicker,
+  message,
 } from "antd";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
@@ -40,6 +43,7 @@ const { Meta } = Card;
 
 const LandingPage = () => {
   const [productList, setProductList] = useState([]);
+  const [form] = Form.useForm();
   const getProduct = async () => {
     try {
       const res = await axios.get("http://localhost:5555/productions");
@@ -849,11 +853,13 @@ const LandingPage = () => {
 
     try {
       const res = await axios.post("http://localhost:5555/customers", values);
-
       console.log(res.data.customer);
+      message.success("Đặt bàn thành công");
     } catch (error) {
       console.log(error);
+      message.error("Đặt bàn thất bại");
     }
+    form.resetFields();
   };
 
   const menu = (
@@ -869,6 +875,8 @@ const LandingPage = () => {
       </Menu.Item>
     </Menu>
   );
+
+  const format = "HH:mm";
 
   return (
     <Fragment>
@@ -1154,7 +1162,6 @@ const LandingPage = () => {
                     {new Intl.NumberFormat().format(item.price)} VNĐ
                   </div>
                 </Card>
-                ,
               </List.Item>
             )}
           />
@@ -1337,6 +1344,7 @@ const LandingPage = () => {
             name="nest-messages"
             onFinish={onFinish}
             validateMessages="Vui long nhap thong tin"
+            form={form}
           >
             <Form.Item
               name="name"
@@ -1349,16 +1357,25 @@ const LandingPage = () => {
               <Input placeholder="Tên khách hàng" />
             </Form.Item>
 
-            <Form.Item
-              name="phone"
-              rules={[
-                {
-                  required: true,
-                },
-              ]}
-            >
-              <Input placeholder="Số điện thoại" />
-            </Form.Item>
+            <div style={{ display: "flex", justifyContent: "space-between" }}>
+              <Form.Item
+                style={{ width: "50%" }}
+                name="phone"
+                rules={[
+                  {
+                    required: true,
+                  },
+                ]}
+              >
+                <Input placeholder="Số điện thoại" />
+              </Form.Item>
+              <Form.Item name="time">
+                <TimePicker
+                  defaultValue={moment("17:45", format)}
+                  format={format}
+                />
+              </Form.Item>
+            </div>
 
             <div style={{ display: "flex", justifyContent: "space-between" }}>
               <Form.Item name="date" label="">
@@ -1384,7 +1401,7 @@ const LandingPage = () => {
             </div>
 
             <Form.Item name="content">
-              <Input.TextArea placeholder="Nội dung" />
+              <Input.TextArea placeholder="Lời nhắn" />
             </Form.Item>
             <Form.Item>
               <Button
