@@ -1096,7 +1096,8 @@ const LandingPage = () => {
         style={{
           display: "flex",
           justifyContent: "center",
-          marginBottom: "30px",
+          marginBottom: "50px",
+          marginTop: "30px",
         }}
       >
         <div
@@ -1120,7 +1121,7 @@ const LandingPage = () => {
         <div
           style={{
             width: "100%",
-            maxWidth: "1200px",
+            maxWidth: "1600px",
           }}
         >
           <List
@@ -1139,13 +1140,18 @@ const LandingPage = () => {
               <List.Item>
                 <Card
                   hoverable
-                  style={{ width: 240 }}
                   cover={<img alt="example" src={item.thumbnail} />}
+                  style={{ fontSize: "20px", borderRadius: "10px" }}
                 >
                   <Meta title={item.name} description={item.description} />
-                  <div style={{ marginTop: "15px", color: "red" }}>
+                  <div
+                    style={{
+                      marginTop: "15px",
+                      color: "red",
+                    }}
+                  >
                     {" "}
-                    {item.price}
+                    {new Intl.NumberFormat().format(item.price)} VNĐ
                   </div>
                 </Card>
                 ,
