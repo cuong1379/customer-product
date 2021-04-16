@@ -4,6 +4,7 @@ import LandingPage from "./pages/LandingPage";
 import Breakfast from "./pages/Breakfast";
 import Dimsum from "./pages/Dimsum";
 import HotPot from "./pages/HotPot";
+import Introduce from "./pages/Introduce";
 
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
@@ -15,6 +16,7 @@ function App() {
           <Route path="/breakfast" component={Breakfast} />
           <Route path="/dimsum" component={Dimsum} />
           <Route path="/hotpot" component={HotPot} />
+          <Route path="/introduce" component={Introduce} />
           <Route path="/" component={LandingPage} />
         </Switch>
       </BrowserRouter>
