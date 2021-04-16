@@ -18,6 +18,8 @@ import {
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 
+import { Link } from "react-router-dom";
+
 const contentStyle1 = {
   backgroundPosition: "center",
   height: "500px",
@@ -865,13 +867,19 @@ const LandingPage = () => {
   const menu = (
     <Menu style={{ backgroundColor: "#2a2b2e" }}>
       <Menu.Item style={{ color: "#eb7c7c" }}>
-        <p style={{ paddingLeft: "20px", paddingRight: "20px" }}>Ăn sáng</p>
+        <Link to="/breakfast" style={{ color: "#eb7c7c" }}>
+          <p style={{ paddingLeft: "20px", paddingRight: "20px" }}>Ăn sáng</p>
+        </Link>
       </Menu.Item>
       <Menu.Item style={{ color: "#eb7c7c" }}>
-        <p style={{ paddingLeft: "20px", paddingRight: "20px" }}>Dimsum</p>
+        <Link to="/dimsum" style={{ color: "#eb7c7c" }}>
+          <p style={{ paddingLeft: "20px", paddingRight: "20px" }}>Dimsum</p>
+        </Link>
       </Menu.Item>
       <Menu.Item style={{ color: "#eb7c7c" }}>
-        <p style={{ paddingLeft: "20px", paddingRight: "20px" }}>Lẩu</p>
+        <Link to="/hotpot" style={{ color: "#eb7c7c" }}>
+          <p style={{ paddingLeft: "20px", paddingRight: "20px" }}>Lẩu</p>
+        </Link>
       </Menu.Item>
     </Menu>
   );
@@ -966,11 +974,13 @@ const LandingPage = () => {
           </li>
         </ul>
         <div>
-          <img
-            style={{ width: "83px" }}
-            alt="description of huhu"
-            src="https://haihoangbinhtan.com/uploads/source/header/1f0552e37b409c1ec551.jpg"
-          />
+          <Link to="/">
+            <img
+              style={{ width: "83px" }}
+              alt="description of huhu"
+              src="https://haihoangbinhtan.com/uploads/source/header/1f0552e37b409c1ec551.jpg"
+            />
+          </Link>
         </div>
         <div>
           <ul style={{ listStyle: "none", display: "flex" }}>
