@@ -1,26 +1,22 @@
-import React, { useState, useEffect } from "react";
-import { List, Card, Dropdown, Menu } from "antd";
+import React from "react";
 import axios from "axios";
+import {
+  Form,
+  Input,
+  InputNumber,
+  Button,
+  DatePicker,
+  Dropdown,
+  Menu,
+  TimePicker,
+  message,
+} from "antd";
+import moment from "moment";
 import { Link } from "react-router-dom";
-const { Meta } = Card;
 
-const Breakfast = () => {
-  const [productList, setProductList] = useState([]);
-
-  const getProduct = async () => {
-    try {
-      const res = await axios.get("http://localhost:5555/productions");
-      console.log(res.data.production);
-      setProductList(res.data.production);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    getProduct();
-  }, []);
-
+const Contact = () => {
+  const [form] = Form.useForm();
+  const format = "HH:mm";
   const menu = (
     <Menu style={{ backgroundColor: "#2a2b2e" }}>
       <Menu.Item style={{ color: "#eb7c7c" }}>
@@ -40,6 +36,20 @@ const Breakfast = () => {
       </Menu.Item>
     </Menu>
   );
+
+  const onFinish = async (values) => {
+    console.log(values);
+
+    try {
+      const res = await axios.post("http://localhost:5555/customers", values);
+      console.log(res.data.customer);
+      message.success("Đặt bàn thành công");
+    } catch (error) {
+      console.log(error);
+      message.error("Đặt bàn thất bại");
+    }
+    form.resetFields();
+  };
 
   return (
     <div>
@@ -117,7 +127,6 @@ const Breakfast = () => {
             </span>
           </li>
           <li style={{ padding: "10px 15px", fontWeight: "100px" }}>
-            {/* <span style={{ padding: "5px", cursor: "pointer" }}>THỰC ĐƠN</span> */}
             <Dropdown overlay={menu} placement="bottomCenter" arrow>
               <span style={{ padding: "5px", cursor: "pointer" }}>
                 THỰC ĐƠN
@@ -190,54 +199,179 @@ const Breakfast = () => {
             marginLeft: "30px",
           }}
         >
-          Các món Dimsum
+          Liên hệ
         </div>
       </div>
       <div
         style={{
           display: "flex",
-          justifyContent: "center",
+          justifyContent: "space-around",
+          width: "100%",
         }}
       >
-        <div
-          style={{
-            width: "100%",
-            maxWidth: "1600px",
-          }}
-        >
-          <List
-            style={{ width: "100%" }}
-            grid={{
-              gutter: 16,
-              xs: 1,
-              sm: 2,
-              md: 4,
-              lg: 4,
-              xl: 4,
-              xxl: 4,
+        <div style={{ width: "50%" }}>
+          <iframe
+            title="Google Map"
+            style={{ width: "100%", height: "100%" }}
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.807510014489!2d106.61270031472169!3d10.749313662633048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752dcd24fec181%3A0x9305d628f31e46c8!2zMjM5IFbDoG5oIMSQYWkgVHJvbmcsIELDrG5oIFRy4buLIMSQw7RuZyBCLCBCw6xuaCBUw6JuLCBUaMOgbmggcGjhu5EgSOG7kyBDaMOtIE1pbmgsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1617431019274!5m2!1svi!2s"
+          ></iframe>
+        </div>
+
+        <div style={{ width: "50%" }}>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              marginBottom: "50px",
+              marginTop: "30px",
             }}
-            dataSource={productList}
-            renderItem={(item) => (
-              <List.Item>
-                <Card
-                  hoverable
-                  cover={<img alt="example" src={item.thumbnail} />}
-                  style={{ fontSize: "20px", borderRadius: "10px" }}
+          >
+            <div
+              style={{
+                color: "#000",
+                fontSize: "25px",
+                fontWeight: "500",
+                marginTop: "30px",
+                marginLeft: "30px",
+              }}
+            >
+              Quán lẩu dê Hải Nam
+            </div>
+          </div>
+          <div style={{ padding: "30px" }}>
+            <div>
+              <img
+                style={{ width: "150px" }}
+                alt="meomeo"
+                src={process.env.PUBLIC_URL + "/anhfooter.jpg"}
+              />
+            </div>
+          </div>
+          <div style={{ fontWeight: "bold", padding: "30px" }}>
+            Đến với nhà hàng để được phục vụ tốt nhất và trãi nghiệm nhé!{" "}
+            <br></br>
+            239-241 Vành Đai Trong, Phường Bình Trị Đông B, Bình Tân, Hồ Chí{" "}
+            <br></br>
+            Minh Hotline: 0938 624 368 <br></br>
+            Mail: quananhaihoang@gmail.com <br></br>
+            Website: haihoangbinhtan.com
+            <h2 style={{ marginTop: "20px" }}>Liên Hệ:</h2>
+          </div>
+
+          <div
+            style={{
+              backgroundImage: `url("https://haihoangbinhtan.com/uploads/source/slider/nhahanghaihoangbinhtan.jpg")`,
+              backgroundAttachment: "fixed",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <div
+              style={{
+                backgroundColor: "#000",
+                padding: "30px",
+                margin: "30px",
+                maxWidth: "500px",
+                width: "100%",
+              }}
+            >
+              <p
+                style={{
+                  textAlign: "center",
+                  color: "#ffcc33",
+                  fontWeight: "400",
+                  fontSize: "25px",
+                }}
+              >
+                YÊU CẦU ĐẶT BÀN
+              </p>
+              <Form
+                name="nest-messages"
+                onFinish={onFinish}
+                validateMessages="Vui long nhap thong tin"
+                form={form}
+              >
+                <Form.Item
+                  name="name"
+                  rules={[
+                    {
+                      required: true,
+                    },
+                  ]}
                 >
-                  <Meta title={item.name} description={item.description} />
-                  <div
+                  <Input placeholder="Tên khách hàng" />
+                </Form.Item>
+
+                <div
+                  style={{ display: "flex", justifyContent: "space-between" }}
+                >
+                  <Form.Item
+                    style={{ width: "50%" }}
+                    name="phone"
+                    rules={[
+                      {
+                        required: true,
+                      },
+                    ]}
+                  >
+                    <Input placeholder="Số điện thoại" />
+                  </Form.Item>
+                  <Form.Item name="time">
+                    <TimePicker
+                      defaultValue={moment("17:45", format)}
+                      format={format}
+                    />
+                  </Form.Item>
+                </div>
+
+                <div
+                  style={{ display: "flex", justifyContent: "space-between" }}
+                >
+                  <Form.Item name="date" label="">
+                    <DatePicker placeholder="mm/dd/yy" />
+                  </Form.Item>
+
+                  <Form.Item
+                    style={{ width: "50%" }}
+                    name="count"
+                    rules={[
+                      {
+                        type: "number",
+                        min: 0,
+                        max: 99,
+                      },
+                    ]}
+                  >
+                    <InputNumber
+                      style={{ width: "100%" }}
+                      placeholder="Số chỗ ngồi"
+                    />
+                  </Form.Item>
+                </div>
+
+                <Form.Item name="content">
+                  <Input.TextArea placeholder="Lời nhắn" />
+                </Form.Item>
+                <Form.Item>
+                  <Button
+                    htmlType="submit"
                     style={{
-                      marginTop: "15px",
-                      color: "red",
+                      width: "100%",
+                      borderRadius: "20px",
+                      backgroundColor: "#cc0000",
+                      color: "white",
+                      border: "none",
                     }}
                   >
-                    {" "}
-                    {new Intl.NumberFormat().format(item.price)} VNĐ
-                  </div>
-                </Card>
-              </List.Item>
-            )}
-          />
+                    Gửi Yêu Cầu Đặt Hẹn
+                  </Button>
+                </Form.Item>
+              </Form>
+            </div>
+          </div>
         </div>
       </div>
       <div
@@ -306,4 +440,4 @@ const Breakfast = () => {
   );
 };
 
-export default Breakfast;
+export default Contact;

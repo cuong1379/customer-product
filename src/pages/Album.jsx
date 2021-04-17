@@ -2,11 +2,9 @@ import React, { useState, useEffect } from "react";
 import { List, Card, Dropdown, Menu } from "antd";
 import axios from "axios";
 import { Link } from "react-router-dom";
-const { Meta } = Card;
 
-const Breakfast = () => {
+const Album = () => {
   const [productList, setProductList] = useState([]);
-
   const getProduct = async () => {
     try {
       const res = await axios.get("http://localhost:5555/productions");
@@ -20,7 +18,6 @@ const Breakfast = () => {
   useEffect(() => {
     getProduct();
   }, []);
-
   const menu = (
     <Menu style={{ backgroundColor: "#2a2b2e" }}>
       <Menu.Item style={{ color: "#eb7c7c" }}>
@@ -117,7 +114,6 @@ const Breakfast = () => {
             </span>
           </li>
           <li style={{ padding: "10px 15px", fontWeight: "100px" }}>
-            {/* <span style={{ padding: "5px", cursor: "pointer" }}>THỰC ĐƠN</span> */}
             <Dropdown overlay={menu} placement="bottomCenter" arrow>
               <span style={{ padding: "5px", cursor: "pointer" }}>
                 THỰC ĐƠN
@@ -190,7 +186,7 @@ const Breakfast = () => {
             marginLeft: "30px",
           }}
         >
-          Các món Dimsum
+          Album ảnh
         </div>
       </div>
       <div
@@ -223,18 +219,7 @@ const Breakfast = () => {
                   hoverable
                   cover={<img alt="example" src={item.thumbnail} />}
                   style={{ fontSize: "20px", borderRadius: "10px" }}
-                >
-                  <Meta title={item.name} description={item.description} />
-                  <div
-                    style={{
-                      marginTop: "15px",
-                      color: "red",
-                    }}
-                  >
-                    {" "}
-                    {new Intl.NumberFormat().format(item.price)} VNĐ
-                  </div>
-                </Card>
+                ></Card>
               </List.Item>
             )}
           />
@@ -306,4 +291,4 @@ const Breakfast = () => {
   );
 };
 
-export default Breakfast;
+export default Album;

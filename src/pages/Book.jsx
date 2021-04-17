@@ -1,26 +1,37 @@
-import React, { useState, useEffect } from "react";
-import { List, Card, Dropdown, Menu } from "antd";
+import React from "react";
 import axios from "axios";
+import {
+  Form,
+  Input,
+  InputNumber,
+  Button,
+  DatePicker,
+  Dropdown,
+  Menu,
+  TimePicker,
+  message,
+} from "antd";
+import moment from "moment";
+
 import { Link } from "react-router-dom";
-const { Meta } = Card;
 
-const Breakfast = () => {
-  const [productList, setProductList] = useState([]);
+const Book = () => {
+  const [form] = Form.useForm();
+  const format = "HH:mm";
 
-  const getProduct = async () => {
+  const onFinish = async (values) => {
+    console.log(values);
+
     try {
-      const res = await axios.get("http://localhost:5555/productions");
-      console.log(res.data.production);
-      setProductList(res.data.production);
+      const res = await axios.post("http://localhost:5555/customers", values);
+      console.log(res.data.customer);
+      message.success("Đặt bàn thành công");
     } catch (error) {
       console.log(error);
+      message.error("Đặt bàn thất bại");
     }
+    form.resetFields();
   };
-
-  useEffect(() => {
-    getProduct();
-  }, []);
-
   const menu = (
     <Menu style={{ backgroundColor: "#2a2b2e" }}>
       <Menu.Item style={{ color: "#eb7c7c" }}>
@@ -117,7 +128,6 @@ const Breakfast = () => {
             </span>
           </li>
           <li style={{ padding: "10px 15px", fontWeight: "100px" }}>
-            {/* <span style={{ padding: "5px", cursor: "pointer" }}>THỰC ĐƠN</span> */}
             <Dropdown overlay={menu} placement="bottomCenter" arrow>
               <span style={{ padding: "5px", cursor: "pointer" }}>
                 THỰC ĐƠN
@@ -190,56 +200,120 @@ const Breakfast = () => {
             marginLeft: "30px",
           }}
         >
-          Các món Dimsum
+          Đặt bàn
         </div>
       </div>
       <div
         style={{
+          backgroundImage: `url("https://haihoangbinhtan.com/uploads/source/slider/nhahanghaihoangbinhtan.jpg")`,
+          backgroundAttachment: "fixed",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
           display: "flex",
           justifyContent: "center",
         }}
       >
         <div
           style={{
+            backgroundColor: "#000",
+            padding: "30px",
+            margin: "30px",
+            maxWidth: "500px",
             width: "100%",
-            maxWidth: "1600px",
           }}
         >
-          <List
-            style={{ width: "100%" }}
-            grid={{
-              gutter: 16,
-              xs: 1,
-              sm: 2,
-              md: 4,
-              lg: 4,
-              xl: 4,
-              xxl: 4,
+          <p
+            style={{
+              textAlign: "center",
+              color: "#ffcc33",
+              fontWeight: "400",
+              fontSize: "25px",
             }}
-            dataSource={productList}
-            renderItem={(item) => (
-              <List.Item>
-                <Card
-                  hoverable
-                  cover={<img alt="example" src={item.thumbnail} />}
-                  style={{ fontSize: "20px", borderRadius: "10px" }}
-                >
-                  <Meta title={item.name} description={item.description} />
-                  <div
-                    style={{
-                      marginTop: "15px",
-                      color: "red",
-                    }}
-                  >
-                    {" "}
-                    {new Intl.NumberFormat().format(item.price)} VNĐ
-                  </div>
-                </Card>
-              </List.Item>
-            )}
-          />
+          >
+            YÊU CẦU ĐẶT BÀN
+          </p>
+          <Form
+            name="nest-messages"
+            onFinish={onFinish}
+            validateMessages="Vui long nhap thong tin"
+            form={form}
+          >
+            <Form.Item
+              name="name"
+              rules={[
+                {
+                  required: true,
+                },
+              ]}
+            >
+              <Input placeholder="Tên khách hàng" />
+            </Form.Item>
+
+            <div style={{ display: "flex", justifyContent: "space-between" }}>
+              <Form.Item
+                style={{ width: "50%" }}
+                name="phone"
+                rules={[
+                  {
+                    required: true,
+                  },
+                ]}
+              >
+                <Input placeholder="Số điện thoại" />
+              </Form.Item>
+              <Form.Item name="time">
+                <TimePicker
+                  defaultValue={moment("17:45", format)}
+                  format={format}
+                />
+              </Form.Item>
+            </div>
+
+            <div style={{ display: "flex", justifyContent: "space-between" }}>
+              <Form.Item name="date" label="">
+                <DatePicker placeholder="mm/dd/yy" />
+              </Form.Item>
+
+              <Form.Item
+                style={{ width: "50%" }}
+                name="count"
+                rules={[
+                  {
+                    type: "number",
+                    min: 0,
+                    max: 99,
+                  },
+                ]}
+              >
+                <InputNumber
+                  style={{ width: "100%" }}
+                  placeholder="Số chỗ ngồi"
+                />
+              </Form.Item>
+            </div>
+
+            <Form.Item name="content">
+              <Input.TextArea placeholder="Lời nhắn" />
+            </Form.Item>
+            <Form.Item>
+              <Button
+                htmlType="submit"
+                style={{
+                  width: "100%",
+                  borderRadius: "20px",
+                  backgroundColor: "#cc0000",
+                  color: "white",
+                  border: "none",
+                }}
+              >
+                Gửi Yêu Cầu Đặt Hẹn
+              </Button>
+            </Form.Item>
+          </Form>
         </div>
       </div>
+
       <div
         style={{
           display: "flex",
@@ -306,4 +380,4 @@ const Breakfast = () => {
   );
 };
 
-export default Breakfast;
+export default Book;

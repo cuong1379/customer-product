@@ -184,10 +184,10 @@ const Introduce = () => {
         }}
       >
         <h3>
-          Hải Hoàng Bình Tân Nhà hàng Hải Hoàng Bình Tân với thương hiệu trên 70
-          năm, tọa lạc ngay trung tâm Quận Bình Tân, đã trở thành cái tên quen
-          thuộc đối với khách hàng khu vực Chợ Lớn nói riêng, địa bàn TP. Hồ Chí
-          Minh nói chung và khách du lịch Trung Quốc, Đài Loan và Đông Nam Á.{" "}
+          Quán lẩu dê Hải Nam với thương hiệu trên 70 năm, tọa lạc ngay trung
+          tâm Quận Bình Tân, đã trở thành cái tên quen thuộc đối với khách hàng
+          khu vực Chợ Lớn nói riêng, địa bàn TP. Hồ Chí Minh nói chung và khách
+          du lịch Trung Quốc, Đài Loan và Đông Nam Á.{" "}
         </h3>
 
         <p>
@@ -196,14 +196,14 @@ const Introduce = () => {
           cách hiện đại Phương Tây Tiệc liên hoan, mừng thọ, họp mặt thân mật,
           v.v… Tổ chức các sự kiện quan trọng như hội nghị khách hàng, đại hội,
           các buổi lễ ra mắt, v.v… Nhận đặt ăn cho các đoàn khách du lịch. Nhà
-          hàng Hải Hoàng Bình Tân hân hạnh được đón tiếp quý khách hàng gần xa,
-          được phục vụ quý khách là niềm vinh dự cho chúng tôi.
+          hàng hân hạnh được đón tiếp quý khách hàng gần xa, được phục vụ quý
+          khách là niềm vinh dự cho chúng tôi.
         </p>
         <h3>
-          Nhà hàng Hải Hoàng Bình Tân với thương hiệu trên 70 năm, tọa lạc ngay
-          trung tâm Quận Bình Tân, đã trở thành cái tên quen thuộc đối với khách
-          hàng khu vực Chợ Lớn nói riêng, địa bàn TP. Hồ Chí Minh nói chung và
-          khách du lịch Trung Quốc, Đài Loan và Đông Nam Á.
+          Quán lẩu dê Hải Nam với thương hiệu trên 70 năm, tọa lạc ngay trung
+          tâm Quận Bình Tân, đã trở thành cái tên quen thuộc đối với khách hàng
+          khu vực Chợ Lớn nói riêng, địa bàn TP. Hồ Chí Minh nói chung và khách
+          du lịch Trung Quốc, Đài Loan và Đông Nam Á.
         </h3>
       </div>
       <div
@@ -263,7 +263,7 @@ const Introduce = () => {
               marginBottom: "15px",
             }}
           >
-            NHÀ HÀNG HẢI HOÀNG BÌNH TÂN
+            Quán lẩu dê Hải Nam
           </div>
           <div>
             <img
@@ -305,7 +305,7 @@ const Introduce = () => {
           paddingBottom: "15px",
         }}
       >
-        © 2021 Nhà Hàng Hải Hoàng Bình Tân - Thiết kế bởi finx.vn
+        © 2021 Quán lẩu dê Hải Nam - Thiết kế bởi finx.vn
       </div>
     </div>
   );

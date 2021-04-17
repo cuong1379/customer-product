@@ -195,7 +195,7 @@ const Introduce = () => {
               marginBottom: "15px",
             }}
           >
-            NHÀ HÀNG HẢI HOÀNG BÌNH TÂN
+            Quán lẩu dê Hải Nam
           </div>
           <div>
             <img
@@ -237,7 +237,7 @@ const Introduce = () => {
           paddingBottom: "15px",
         }}
       >
-        © 2021 Nhà Hàng Hải Hoàng Bình Tân - Thiết kế bởi finx.vn
+        © 2021 Quán lẩu dê Hải Nam - Thiết kế bởi finx.vn
       </div>
     </div>
   );
