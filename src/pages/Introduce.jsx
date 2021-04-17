@@ -45,30 +45,34 @@ const Introduce = () => {
           </svg>
           <div> Hotline: 0938 624 368 - Phone: 0937 230 388</div>
         </div>
+
         <div style={{ display: "flex", alignItems: "center" }}>
-          <button
-            style={{
-              padding: "10px",
-              border: "none",
-              background: "rgba(255,211,109,1)",
-              display: "flex",
-              marginRight: "20px",
-            }}
-          >
-            <svg
+          <Link to="/book">
+            <button
               style={{
-                width: "20px",
-                color: "white",
-                fill: "currentColor",
-                marginRight: "5px",
+                padding: "10px",
+                border: "none",
+                background: "rgba(255,211,109,1)",
+                display: "flex",
+                marginRight: "20px",
               }}
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 32 32"
             >
-              <path d="M 28.28125 6.28125 L 11 23.5625 L 3.71875 16.28125 L 2.28125 17.71875 L 10.28125 25.71875 L 11 26.40625 L 11.71875 25.71875 L 29.71875 7.71875 Z" />
-            </svg>
-            <div>Đặt bàn</div>
-          </button>
+              <svg
+                style={{
+                  width: "20px",
+                  color: "white",
+                  fill: "currentColor",
+                  marginRight: "5px",
+                }}
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 32 32"
+              >
+                <path d="M 28.28125 6.28125 L 11 23.5625 L 3.71875 16.28125 L 2.28125 17.71875 L 10.28125 25.71875 L 11 26.40625 L 11.71875 25.71875 L 29.71875 7.71875 Z" />
+              </svg>
+
+              <div style={{ cursor: "pointer", color: "white" }}>Đặt bàn</div>
+            </button>
+          </Link>
           <form style={{ color: "black", width: "150px", borderRadius: "5px" }}>
             <select
               style={{ width: "150px", borderRadius: "5px" }}
@@ -84,75 +88,111 @@ const Introduce = () => {
       <div
         style={{
           display: "flex",
-          justifyContent: "space-around",
-          width: "100%",
+          justifyContent: "center",
           backgroundColor: "rgb(0, 0, 0)",
           color: "white",
         }}
       >
-        <ul style={{ listStyle: "none", display: "flex" }}>
-          <li style={{ padding: "10px 15px", fontWeight: "100px" }}>
-            <span style={{ padding: "5px", cursor: "pointer" }}>TRANG CHỦ</span>
-          </li>
-          <li style={{ padding: "10px 15px", fontWeight: "100px" }}>
-            <span style={{ padding: "5px", cursor: "pointer" }}>
-              GIỚI THIỆU
-            </span>
-          </li>
-          <li style={{ padding: "10px 15px", fontWeight: "100px" }}>
-            <Dropdown overlay={menu} placement="bottomCenter" arrow>
-              <span style={{ padding: "5px", cursor: "pointer" }}>
-                THỰC ĐƠN
-              </span>
-            </Dropdown>
-          </li>
-          <li style={{ padding: "10px 15px", fontWeight: "100px" }}>
-            <span style={{ padding: "5px", cursor: "pointer" }}>HÌNH ẢNH</span>
-          </li>
-        </ul>
-        <div>
-          <Link to="/">
-            <img
-              style={{ width: "83px" }}
-              alt="description of huhu"
-              src="https://haihoangbinhtan.com/uploads/source/header/1f0552e37b409c1ec551.jpg"
-            />
-          </Link>
-        </div>
-        <div>
-          <ul style={{ listStyle: "none", display: "flex" }}>
-            <li style={{ padding: "10px 15px", fontWeight: "100px" }}>
-              <span style={{ padding: "5px", cursor: "pointer" }}>
-                KHUYẾN MÃI
-              </span>
-            </li>
-            <li style={{ padding: "10px 15px", fontWeight: "100px" }}>
-              <span style={{ padding: "5px", cursor: "pointer" }}>TIN TỨC</span>
-            </li>
-            <li style={{ padding: "10px 15px", fontWeight: "100px" }}>
-              <span style={{ padding: "5px", cursor: "pointer" }}>ƯU ĐÃI</span>
-            </li>
-            <li style={{ padding: "10px 15px", fontWeight: "100px" }}>
-              <span style={{ padding: "5px", cursor: "pointer" }}>ĐẶT BÀN</span>
-            </li>
-          </ul>
-          <ul style={{ listStyle: "none", display: "flex" }}>
-            <li style={{ padding: "10px 15px", fontWeight: "100px" }}>
-              <span style={{ padding: "5px", cursor: "pointer" }}>
-                GÓC ẨM THỰC
-              </span>
-            </li>
-            <li style={{ padding: "10px 15px", fontWeight: "100px" }}>
-              <span style={{ padding: "5px", cursor: "pointer" }}>LIÊN HỆ</span>
-            </li>
-            <div>
+        <div
+          style={{
+            maxWidth: "1200px",
+            margin: "auto",
+            width: "100%",
+            display: "flex",
+            justifyContent: "space-around",
+          }}
+        >
+          <div>
+            <ul style={{ listStyle: "none", display: "flex" }}>
+              <Link to="/">
+                <li
+                  style={{
+                    padding: "10px 15px",
+                    fontWeight: "100px",
+                    color: "white",
+                  }}
+                >
+                  <span style={{ padding: "5px", cursor: "pointer" }}>
+                    TRANG CHỦ
+                  </span>
+                </li>
+              </Link>
+              <Link to="/introduce">
+                <li
+                  style={{
+                    padding: "10px 15px",
+                    fontWeight: "100px",
+                    color: "white",
+                  }}
+                >
+                  <span style={{ padding: "5px", cursor: "pointer" }}>
+                    GIỚI THIỆU
+                  </span>
+                </li>
+              </Link>
+              <li style={{ padding: "10px 15px", fontWeight: "100px" }}>
+                <Dropdown overlay={menu} placement="bottomCenter" arrow>
+                  <span style={{ padding: "5px", cursor: "pointer" }}>
+                    THỰC ĐƠN
+                  </span>
+                </Dropdown>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <Link to="/">
               <img
-                style={{ marginLeft: "30px", height: "30px" }}
-                alt="description of hehe"
-                src="https://haihoangbinhtan.com/uploads/source/header/tim.png"
+                style={{ width: "83px" }}
+                alt="description of huhu"
+                src="https://haihoangbinhtan.com/uploads/source/header/1f0552e37b409c1ec551.jpg"
               />
-            </div>
-          </ul>
+            </Link>
+          </div>
+          <div>
+            <ul style={{ listStyle: "none", display: "flex" }}>
+              <Link to="/album">
+                <li
+                  style={{
+                    padding: "10px 15px",
+                    fontWeight: "100px",
+                    color: "white",
+                  }}
+                >
+                  <span style={{ padding: "5px", cursor: "pointer" }}>
+                    HÌNH ẢNH
+                  </span>
+                </li>
+              </Link>
+              <Link to="/book">
+                <li
+                  style={{
+                    padding: "10px 15px",
+                    fontWeight: "100px",
+                    color: "white",
+                  }}
+                >
+                  <span style={{ padding: "5px", cursor: "pointer" }}>
+                    ĐẶT BÀN
+                  </span>
+                </li>
+              </Link>
+
+              <Link to="/contact">
+                <li
+                  style={{
+                    padding: "10px 15px",
+                    fontWeight: "100px",
+                    color: "white",
+                  }}
+                >
+                  <span style={{ padding: "5px", cursor: "pointer" }}>
+                    LIÊN HỆ
+                  </span>
+                </li>
+              </Link>
+            </ul>
+          </div>
         </div>
       </div>
       <div
