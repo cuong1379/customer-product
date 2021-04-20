@@ -48,7 +48,9 @@ const LandingPage = () => {
   const [form] = Form.useForm();
   const getProduct = async () => {
     try {
-      const res = await axios.get("http://localhost:5555/productions");
+      const res = await axios.get(
+        "http://localhost:5555/productions?page=1&limit=12"
+      );
       console.log(res.data.production);
       setProductList(res.data.production);
     } catch (error) {

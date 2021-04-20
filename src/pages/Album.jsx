@@ -7,7 +7,7 @@ const Album = () => {
   const [productList, setProductList] = useState([]);
   const getProduct = async () => {
     try {
-      const res = await axios.get("http://localhost:5555/productions");
+      const res = await axios.get("http://localhost:5555/productions?limit=30");
       console.log(res.data.production);
       setProductList(res.data.production);
     } catch (error) {
