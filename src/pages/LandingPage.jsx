@@ -1,6 +1,7 @@
 import React, { Fragment, useState, useEffect } from "react";
 import axios from "axios";
 import moment from "moment";
+// import MessengerCustomerChat from "react-messenger-customer-chat";
 import {
   Carousel,
   List,
@@ -14,6 +15,7 @@ import {
   Menu,
   TimePicker,
   message,
+  Popover,
 } from "antd";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
@@ -40,6 +42,8 @@ const contentStyle4 = {
   height: "500px",
   backgroundImage: `url("https://haihoangbinhtan.com/uploads/source/slider/nhahanghaihoang.jpg")`,
 };
+
+const content = <div>Vui lòng được phục vụ quý khách!</div>;
 
 const { Meta } = Card;
 
@@ -88,37 +92,37 @@ const LandingPage = () => {
   const items = [
     <img
       style={{ width: "275px", height: "200px" }}
-      src={process.env.PUBLIC_URL + "/mon1.jpg"}
+      src={process.env.PUBLIC_URL + "/brealfast1.jpg"}
       alt="has1"
       onDragStart={handleDragStart}
     />,
     <img
       style={{ width: "275px", height: "200px" }}
-      src={process.env.PUBLIC_URL + "/mon2.jpg"}
+      src={process.env.PUBLIC_URL + "/brealfast2.jpg"}
       alt="has2"
       onDragStart={handleDragStart}
     />,
     <img
       style={{ width: "275px", height: "200px" }}
-      src={process.env.PUBLIC_URL + "/mon3.jpg"}
+      src={process.env.PUBLIC_URL + "/brealfast3.jpg"}
       alt="has3"
       onDragStart={handleDragStart}
     />,
     <img
       style={{ width: "275px", height: "200px" }}
-      src={process.env.PUBLIC_URL + "/mon1.jpg"}
+      src={process.env.PUBLIC_URL + "/brealfast4.jpg"}
       alt="has1"
       onDragStart={handleDragStart}
     />,
     <img
       style={{ width: "275px", height: "200px" }}
-      src={process.env.PUBLIC_URL + "/mon2.jpg"}
+      src={process.env.PUBLIC_URL + "/brealfast5.jpg"}
       alt="has2"
       onDragStart={handleDragStart}
     />,
     <img
       style={{ width: "275px", height: "200px" }}
-      src={process.env.PUBLIC_URL + "/mon3.jpg"}
+      src={process.env.PUBLIC_URL + "/brealfast6.jpg"}
       alt="has3"
       onDragStart={handleDragStart}
     />,
@@ -756,7 +760,12 @@ const LandingPage = () => {
   const items4 = [
     <div style={{ display: "flex" }}>
       <img
-        style={{ width: "100px", height: "100px", borderRadius: "100%" }}
+        style={{
+          width: "100px",
+          height: "100px",
+          borderRadius: "100%",
+          marginRight: "10px",
+        }}
         src={process.env.PUBLIC_URL + "/avt1.jpg"}
         alt="has1"
         onDragStart={handleDragStart}
@@ -771,7 +780,7 @@ const LandingPage = () => {
           }}
         >
           Chỉ có thể nói 1 câu ngắn gọn về mọi thứ từ món ăn đến phong cách phục
-          vụ ở nhà hàng Hải Hoàng là " Tuyệt Vời"&nbsp;
+          vụ ở quán lẩu dê Hải Nam là " Tuyệt Vời"&nbsp;
         </div>
         <div
           style={{
@@ -788,7 +797,12 @@ const LandingPage = () => {
     </div>,
     <div style={{ display: "flex" }}>
       <img
-        style={{ width: "100px", height: "100px", borderRadius: "100%" }}
+        style={{
+          width: "100px",
+          height: "100px",
+          borderRadius: "100%",
+          marginRight: "10px",
+        }}
         src={process.env.PUBLIC_URL + "/avt2.jpg"}
         alt="has1"
         onDragStart={handleDragStart}
@@ -802,8 +816,7 @@ const LandingPage = () => {
             marginRight: "20px",
           }}
         >
-          Chỉ có thể nói 1 câu ngắn gọn về mọi thứ từ món ăn đến phong cách phục
-          vụ ở nhà hàng Hải Hoàng là " Tuyệt Vời"&nbsp;
+          Ở đây thức ăn rất ngon!
         </div>
         <div
           style={{
@@ -814,13 +827,18 @@ const LandingPage = () => {
             fontWeight: "300",
           }}
         >
-          Mrs.Thủy
+          Mr.Hoàng
         </div>
       </div>
     </div>,
     <div style={{ display: "flex" }}>
       <img
-        style={{ width: "100px", height: "100px", borderRadius: "100%" }}
+        style={{
+          width: "100px",
+          height: "100px",
+          borderRadius: "100%",
+          marginRight: "10px",
+        }}
         src={process.env.PUBLIC_URL + "/avt3.jpg"}
         alt="has1"
         onDragStart={handleDragStart}
@@ -834,8 +852,8 @@ const LandingPage = () => {
             marginRight: "20px",
           }}
         >
-          Chỉ có thể nói 1 câu ngắn gọn về mọi thứ từ món ăn đến phong cách phục
-          vụ ở nhà hàng Hải Hoàng là " Tuyệt Vời"&nbsp;
+          Vừa rẻ vừa ngon không có gì để chê. Phục vụ chu đáo, nhân viên thân
+          thiện, nhiệt tình. 10 điểm.
         </div>
         <div
           style={{
@@ -846,7 +864,7 @@ const LandingPage = () => {
             fontWeight: "300",
           }}
         >
-          Mrs.Thủy
+          Mr.Trường
         </div>
       </div>
     </div>,
@@ -1129,7 +1147,15 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-      <div style={{ display: "flex", justifyContent: "center" }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          paddingTop: "50px",
+          paddingBottom: "50px",
+          backgroundColor: "rgb(255, 245, 224)",
+        }}
+      >
         <div style={{ maxWidth: "1200px", width: "100%", marginTop: "50px" }}>
           <AliceCarousel
             mouseTracking
@@ -1194,7 +1220,13 @@ const LandingPage = () => {
               <List.Item>
                 <Card
                   hoverable
-                  cover={<img alt="example" src={item.thumbnail} />}
+                  cover={
+                    <img
+                      style={{ height: "250px" }}
+                      alt="example"
+                      src={item.thumbnail}
+                    />
+                  }
                   style={{ fontSize: "20px", borderRadius: "10px" }}
                 >
                   <Meta title={item.name} description={item.description} />
@@ -1341,7 +1373,7 @@ const LandingPage = () => {
           fontSize: "25px",
         }}
       >
-        <div>KHÁCH HÀNG NÓI GÌ VỀ NHÀ HÀNG NÓN LÁ</div>
+        <div>KHÁCH HÀNG NÓI GÌ VỀ QUÁN LẨU DÊ HẢI NAM</div>
       </div>
       <div style={{ display: "flex", justifyContent: "center" }}>
         <div style={{ maxWidth: "1200px", width: "100%", marginTop: "50px" }}>
@@ -1527,6 +1559,48 @@ const LandingPage = () => {
       >
         © 2021 Quán lẩu dê Hải Nam - Thiết kế bởi finx.vn
       </div>
+      <Popover content={content} title="Hải Nam" trigger="hover">
+        <div
+          style={{
+            position: "fixed",
+            bottom: 0,
+            right: 0,
+            width: "250px",
+            height: "30px",
+            backgroundColor: "#1877F2",
+            borderRadius: "3px",
+            color: "white",
+            textAlign: "center",
+          }}
+        >
+          LIÊN HỆ NGAY
+        </div>
+      </Popover>
+
+      <a
+        href="https://zalo.me/0937230388"
+        style={{
+          position: "fixed",
+          left: 0,
+          top: "50%",
+          borderRadius: "100%",
+          color: "white",
+          textAlign: "center",
+          cursor: "pointer",
+        }}
+      >
+        <img
+          style={{ width: "80px", height: "80px", borderRadius: "100%" }}
+          alt="meowcon"
+          src={process.env.PUBLIC_URL + "/zalo-4.png"}
+        />
+      </a>
+
+      {/* <MessengerCustomerChat
+        pageId="106068154957247"
+        // appId="<APP_ID>"
+        htmlRef="https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js"
+      /> */}
     </Fragment>
   );
 };
