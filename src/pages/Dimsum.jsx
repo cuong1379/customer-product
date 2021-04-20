@@ -262,7 +262,13 @@ const Breakfast = () => {
               <List.Item>
                 <Card
                   hoverable
-                  cover={<img alt="example" src={item.thumbnail} />}
+                  cover={
+                    <img
+                      style={{ height: "250px" }}
+                      alt="example"
+                      src={item.thumbnail}
+                    />
+                  }
                   style={{ fontSize: "20px", borderRadius: "10px" }}
                 >
                   <Meta title={item.name} description={item.description} />
