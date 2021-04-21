@@ -16,6 +16,7 @@ import {
   TimePicker,
   message,
   Popover,
+  Modal,
 } from "antd";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
@@ -50,6 +51,13 @@ const { Meta } = Card;
 const LandingPage = () => {
   const [productList, setProductList] = useState([]);
   const [form] = Form.useForm();
+  const [visible, setVisible] = useState(false);
+  const [currentProduct, setCurrentProduct] = useState({
+    name: "",
+    price: "",
+    description: "",
+    thumbnail: "",
+  });
   const getProduct = async () => {
     try {
       const res = await axios.get(
@@ -884,6 +892,16 @@ const LandingPage = () => {
     form.resetFields();
   };
 
+  const handleOpenModal = async (id) => {
+    try {
+      const res = await axios.get(`http://localhost:5555/productions/${id}`);
+      setCurrentProduct(res.data.production);
+    } catch (error) {
+      console.log(error);
+    }
+    setVisible(true);
+  };
+
   const menu = (
     <Menu style={{ backgroundColor: "#2a2b2e" }}>
       <Menu.Item style={{ color: "#eb7c7c" }}>
@@ -1219,6 +1237,7 @@ const LandingPage = () => {
             renderItem={(item) => (
               <List.Item>
                 <Card
+                  onClick={() => handleOpenModal(item._id)}
                   hoverable
                   cover={
                     <img
@@ -1595,6 +1614,31 @@ const LandingPage = () => {
           src={process.env.PUBLIC_URL + "/zalo-4.png"}
         />
       </a>
+
+      <Modal
+        title="Thông tin chi tiết món ăn"
+        centered
+        visible={visible}
+        onOk={() => setVisible(false)}
+        onCancel={() => setVisible(false)}
+        width={1000}
+        footer={null}
+      >
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <div style={{ width: "60%" }}>
+            <img
+              style={{ maxWidth: "500px", maxHeight: "500px" }}
+              alt="mjbb"
+              src={currentProduct.thumbnail}
+            ></img>
+          </div>
+          <div style={{ width: "40%" }}>
+            <h2>Tên món ăn: {currentProduct.name} </h2>
+            <p style={{ color: "red" }}>Giá: {currentProduct.price}</p>
+            <p>Mô tả chi tiết: {currentProduct.description}</p>
+          </div>
+        </div>
+      </Modal>
 
       {/* <MessengerCustomerChat
         pageId="106068154957247"

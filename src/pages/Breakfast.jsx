@@ -1,11 +1,28 @@
 import React, { useState, useEffect } from "react";
-import { List, Card, Dropdown, Menu } from "antd";
+import { List, Card, Dropdown, Menu, Modal } from "antd";
 import axios from "axios";
 import { Link } from "react-router-dom";
 const { Meta } = Card;
 
 const Breakfast = () => {
   const [productList, setProductList] = useState([]);
+  const [visible, setVisible] = useState(false);
+  const [currentProduct, setCurrentProduct] = useState({
+    name: "",
+    price: "",
+    description: "",
+    thumbnail: "",
+  });
+
+  const handleOpenModal = async (id) => {
+    try {
+      const res = await axios.get(`http://localhost:5555/productions/${id}`);
+      setCurrentProduct(res.data.production);
+    } catch (error) {
+      console.log(error);
+    }
+    setVisible(true);
+  };
 
   const getProduct = async () => {
     try {
@@ -261,6 +278,7 @@ const Breakfast = () => {
             renderItem={(item) => (
               <List.Item>
                 <Card
+                  onClick={() => handleOpenModal(item._id)}
                   hoverable
                   cover={
                     <img
@@ -349,6 +367,30 @@ const Breakfast = () => {
       >
         © 2021 Quán lẩu dê Hải Nam - Thiết kế bởi finx.vn
       </div>
+      <Modal
+        title="Thông tin chi tiết món ăn"
+        centered
+        visible={visible}
+        onOk={() => setVisible(false)}
+        onCancel={() => setVisible(false)}
+        width={1000}
+        footer={null}
+      >
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <div style={{ width: "60%" }}>
+            <img
+              style={{ maxWidth: "500px", maxHeight: "500px" }}
+              alt="mjbb"
+              src={currentProduct.thumbnail}
+            ></img>
+          </div>
+          <div style={{ width: "40%" }}>
+            <h2>Tên món ăn: {currentProduct.name} </h2>
+            <p style={{ color: "red" }}>Giá: {currentProduct.price}</p>
+            <p>Mô tả chi tiết: {currentProduct.description}</p>
+          </div>
+        </div>
+      </Modal>
     </div>
   );
 };
